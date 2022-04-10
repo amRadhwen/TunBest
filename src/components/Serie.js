@@ -44,7 +44,7 @@ export default function Serie({ serie }) {
                     serie ? serie.episodes.map(episode => {
                         return (
                             <div onClick={(e) => { handleClick(e, episode.id) }} onMouseOutCapture={ReverseVisibility} onMouseOverCapture={handleVisibility} className="each-slide episode" style={style}>
-                                <div style={{ 'backgroundImage': `url(${process.env.PUBLIC_URL}${episode.cover})` }}>
+                                <div className='slide' style={{ 'backgroundImage': `url(${process.env.PUBLIC_URL}${episode.cover})` }}>
                                     <div className='hidden'></div>
                                     <span id="ep-desc">{episode.name} ({episode.quality})</span>
                                 </div>

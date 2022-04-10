@@ -63,6 +63,10 @@ div.episode {
   cursor: pointer;
 }
 
+div.slide {
+  border-radius: 10px;
+}
+
 div.hidden {
   visibility: hidden;
 }
@@ -102,5 +106,14 @@ div.watch div.player video {
 @media only screen and (max-width: 400px) {
   div.header div.logo {
     text-align: center;
+  }
+
+  div.series h1 {
+    text-align: center;
+  }
+
+  div.each-slide div {
+    width: 300px;
+    margin: 0 45px;
   }
 }
