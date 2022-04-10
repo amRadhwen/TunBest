@@ -20,7 +20,7 @@ export default function Watch(props) {
                 <h1>{title}</h1>
                 <h3>{episode}({quality})</h3>
                 <div className='player'>
-                    <video ocontrols>
+                    <video controls>
                         <source src={url} type="video/mp4"/>
                     </video>
                 </div>

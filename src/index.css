@@ -98,3 +98,9 @@ div.watch div.player video {
   width: 80%;
 }
 
+
+@media only screen and (max-width: 400px) {
+  div.header div.logo {
+    text-align: center;
+  }
+}

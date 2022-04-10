@@ -3,27 +3,28 @@ import { v1 as uuid } from "uuid";
 import { Slide } from "react-slideshow-image";
 
 export default function Serie({ serie }) {
+    const swidth = window.screen.width;
     const style = {
         textAlign: 'center',
         fontSize: '30px'
-      };
-    
-      const properties = {
+    };
+
+    const properties = {
         duration: 3000,
-        slidesToShow: 4,
+        slidesToShow: swidth > 400 ? 4 : 1,
         slidesToScroll: 1,
         autoplay: false,
         indicators: true,
-      };
+    };
 
-      const handleVisibility = (e) => {
-          if (e.target.id == "ep-desc")
+    const handleVisibility = (e) => {
+        if (e.target.id == "ep-desc")
             e.target.style.visibility = "visible";
-          else 
+        else
             e.target.children[1].style.visibility = "visible";
-      }
+    }
 
-      const ReverseVisibility = (e) => {
+    const ReverseVisibility = (e) => {
         if (e.target.id == "ep-desc")
             e.target.style.visibility = "hidden";
         else
@@ -42,9 +43,9 @@ export default function Serie({ serie }) {
                 {
                     serie ? serie.episodes.map(episode => {
                         return (
-                            <div onClick={(e)=>{handleClick(e, episode.id)}} onMouseOutCapture={ReverseVisibility} onMouseOverCapture={handleVisibility} className="each-slide episode" style={style}>
+                            <div onClick={(e) => { handleClick(e, episode.id) }} onMouseOutCapture={ReverseVisibility} onMouseOverCapture={handleVisibility} className="each-slide episode" style={style}>
                                 <div style={{ 'backgroundImage': `url(${process.env.PUBLIC_URL}${episode.cover})` }}>
-                                <div className='hidden'></div>
+                                    <div className='hidden'></div>
                                     <span id="ep-desc">{episode.name} ({episode.quality})</span>
                                 </div>
                             </div>
